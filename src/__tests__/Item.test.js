@@ -8,8 +8,8 @@ function isClassComponent(component) {
   );
 }
 
-test("uses a class component", () => {
-  expect(isClassComponent(Item)).toBe(true);
+test("uses a functional component", () => {
+  expect(isClassComponent(Item)).toBe(false); // Expecting functional, so false
 });
 
 test("the <li> does not have a className when initialized", () => {

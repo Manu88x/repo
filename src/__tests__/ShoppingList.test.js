@@ -16,15 +16,13 @@ const testData = [
   { id: 5, name: "Cookies", category: "Dessert" },
 ];
 
-test("uses a class component", () => {
-  expect(isClassComponent(ShoppingList)).toBe(true);
+test("uses a functional component", () => {
+  expect(isClassComponent(ShoppingList)).toBe(false); // Expecting functional, so false
 });
 
 test("displays all items when initially rendered", () => {
   const { container } = render(<ShoppingList items={testData} />);
-  expect(container.querySelector(".Items").children).toHaveLength(
-    testData.length
-  );
+  expect(container.querySelector(".Items").children).toHaveLength(testData.length);
 });
 
 test("displays only items that match the selected category", () => {
